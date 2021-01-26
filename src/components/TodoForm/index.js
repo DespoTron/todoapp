@@ -19,19 +19,17 @@ export default (props) => {
   };
 
   return (
-    <div>
-      <form className="todo__form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Add a todo"
-          value={input}
-          name="text"
-          className="todo__input"
-          onChange={handleChange}
-        />
+    <form className="todo__form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Add a todo"
+        value={input}
+        name="text"
+        className="todo__input"
+        onChange={handleChange}
+      />
 
-        <button className="todo__button">Add Todo</button>
-      </form>
-    </div>
+      <button className="todo__button">Add Todo</button>
+    </form>
   );
 };
