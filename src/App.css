@@ -98,12 +98,13 @@ h1 {
   background: linear-gradient(
     90deg,
     rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    rgb(204, 185, 178) 100%
   );
 
   padding: 16px;
   border-radius: 5px;
   width: 90%;
+  cursor: pointer;
 }
 
 .todo-row:nth-child(4n + 1) {

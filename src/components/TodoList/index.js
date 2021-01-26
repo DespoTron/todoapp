@@ -1,47 +1,47 @@
-import React, { useState } from 'react';
-import { TodoForm } from 'components';
-import { Todo } from 'components';
+import React, { useState } from 'react'
+import { TodoForm } from 'components'
+import { Todo } from 'components'
 
 export default () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([])
 
   const addTodo = (todo) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
-      return;
+      return
     }
 
-    const newTodos = [todo, ...todos];
+    const newTodos = [todo, ...todos]
 
-    setTodos(newTodos);
-    console.log(todo, ...todos);
-    console.log(todo.text);
-  };
+    setTodos(newTodos)
+    console.log(todo, ...todos)
+    console.log(todo.text)
+  }
 
   const updateTodo = (todoId, newValue) => {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
-      return;
+      return
     }
 
     setTodos((prev) =>
       prev.map((item) => (item.id === todoId ? newValue : item))
-    );
-  };
+    )
+  }
 
   const removeTodo = (id) => {
-    const removeArr = [...todos].filter((todo) => todo.id !== id);
-    setTodos(removeArr);
-  };
+    const removeArr = [...todos].filter((todo) => todo.id !== id)
+    setTodos(removeArr)
+  }
 
   const completeTodo = (id) => {
     let updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
-        todo.isComplete = !todo.isComplete;
+        todo.isComplete = !todo.isComplete
       }
-      return todo;
-    });
+      return todo
+    })
 
-    setTodos(updatedTodos);
-  };
+    setTodos(updatedTodos)
+  }
 
   return (
     <div>
@@ -54,5 +54,5 @@ export default () => {
         updateTodo={updateTodo}
       />
     </div>
-  );
-};
+  )
+}
