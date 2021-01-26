@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
 
-export default () => {
+export default (props) => {
   const [input, setInput] = useState('');
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // props.onSubmit({
+    //   id: Math.floor(Math.random() * 10000),
+    //   text: input,
+    // });
+
+    setInput('');
   };
 
   return (
@@ -16,6 +27,7 @@ export default () => {
           value={input}
           name="text"
           className="todo__input"
+          onChange={handleChange}
         />
 
         <button className="todo__button">Add Todo</button>
