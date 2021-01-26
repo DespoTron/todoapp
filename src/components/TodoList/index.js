@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { TodoForm, Todo } from '../../components';
+import { TodoForm } from 'components';
+import { Todo } from 'components';
 
 export default () => {
   const [todos, setTodos] = useState([]);
@@ -12,7 +13,8 @@ export default () => {
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
-    // console.log(todo, ...todos);
+    console.log(todo, ...todos);
+    console.log(todo.text);
   };
 
   const updateTodo = (todoId, newValue) => {
@@ -49,7 +51,7 @@ export default () => {
         todos={todos}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
-        updatedTodos={updatedTodos}
+        updateTodo={updateTodo}
       />
     </div>
   );
