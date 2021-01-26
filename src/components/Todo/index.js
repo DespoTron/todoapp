@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { TodoForm } from '../../components';
-import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
+import { HighlightOffIcon } from '@material-ui/icons/HighlightOff';
+import { EditIcon } from '@material-ui/icons/Edit';
 
-export default ({ todos, completeTodo }) => {
+export default ({ todos, completeTodo, removeTodo }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: '',
@@ -19,8 +19,14 @@ export default ({ todos, completeTodo }) => {
       </div>
 
       <div className="icons">
-        <RiCloseCircleLine />
-        <TiEdit />
+        <HighlightOffIcon
+          onClick={() => removeTodo(todo.id)}
+          className="delete-icon"
+        />
+        <EditIcon
+          onClick={() => setEdit({ id: todo.id, value: todo.text })}
+          className="edit-icon"
+        />
       </div>
     </div>;
   });
